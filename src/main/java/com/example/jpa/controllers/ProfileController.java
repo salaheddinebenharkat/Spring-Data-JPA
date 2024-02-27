@@ -5,6 +5,7 @@ import com.example.jpa.services.ProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,7 @@ public class ProfileController {
 
     @PostMapping(path = "/add")
     public Profile addProfile(@RequestBody Profile profile){
+        profile.setCreatedAt(new Date());
         return profileService.saveProfile(profile);
     }
 

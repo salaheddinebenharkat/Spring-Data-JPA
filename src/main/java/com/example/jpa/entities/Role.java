@@ -16,9 +16,10 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(unique = true)
     @NotNull(message = "Role name must not be null !")
+    @Enumerated(EnumType.STRING)
     private Erole role;
 }

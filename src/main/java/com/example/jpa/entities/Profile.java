@@ -13,9 +13,11 @@ import java.util.Date;
 @Data
 public class Profile {
 
+    //@GeneratedValue(generator = "profile_seq")
+    //@SequenceGenerator(name = "profile_seq", sequenceName = "profile_seq", allocationSize = 1)
+
     @Id
-    @GeneratedValue(generator = "profile_seq")
-    @SequenceGenerator(name = "profile_seq", sequenceName = "profile_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String fullName;

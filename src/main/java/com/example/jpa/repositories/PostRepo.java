@@ -32,7 +32,7 @@ public interface PostRepo extends JpaRepository<Post, Long> {
 
 
     // 5
-    public void deletePostsByClient_Id(UUID clientId);
+    public void deletePostsByClient_Id(Long clientId);
 
 
     // 6

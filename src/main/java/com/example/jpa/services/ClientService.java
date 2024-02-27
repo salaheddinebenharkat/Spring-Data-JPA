@@ -24,20 +24,10 @@ public class ClientService {
 
     private final ModelMapper modelMapper;
     private final ClientRepo clientRepo;
-    private final RoleRepo roleRepo;
 
 
-    public ClientResponseDTO saveClient(ClientRequestDTO clientRequestDTO, Integer roleId){
-        Role role = roleRepo.findById(roleId).orElseThrow(()-> new RuntimeException("Role not found !"));
-        Client client = modelMapper.map(clientRequestDTO, Client.class);
-        client.getRoles().add(role);
-
-        System.out.println(role.getRole());
-
-        System.out.println(client.getRoles().size());
-
-        Client savedClient = clientRepo.save(client);
-        return modelMapper.map(savedClient, ClientResponseDTO.class);
+    public Client saveClient(Client client){
+        return clientRepo.save(client);
     }
 
     public List<Client> getAllClients(){
