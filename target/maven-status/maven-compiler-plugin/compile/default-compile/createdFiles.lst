@@ -1,0 +1,13 @@
+com\example\jpa\enumerations\Erole.class
+com\example\jpa\entities\Profile.class
+com\example\jpa\repositories\ProfileRepo.class
+com\example\jpa\repositories\UserRepo.class
+com\example\jpa\entities\User.class
+com\example\jpa\repositories\PostRepo.class
+com\example\jpa\entities\Admin.class
+com\example\jpa\entities\Client.class
+com\example\jpa\repositories\ClientRepo.class
+com\example\jpa\entities\Role.class
+com\example\jpa\JpaApplication.class
+com\example\jpa\entities\Post.class
+com\example\jpa\entities\Address.class
