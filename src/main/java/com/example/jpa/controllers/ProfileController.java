@@ -1,5 +1,7 @@
 package com.example.jpa.controllers;
 
+import com.example.jpa.dtos.requestDTO.ProfileRequestDTO;
+import com.example.jpa.dtos.responseDTO.ProfileResponseDTO;
 import com.example.jpa.entities.Profile;
 import com.example.jpa.services.ProfileService;
 import lombok.RequiredArgsConstructor;
@@ -16,13 +18,13 @@ public class ProfileController {
     private final ProfileService profileService;
 
     @PostMapping(path = "/add")
-    public Profile addProfile(@RequestBody Profile profile){
-        profile.setCreatedAt(new Date());
-        return profileService.saveProfile(profile);
+    public ProfileResponseDTO addProfile(@RequestBody ProfileRequestDTO profileRequestDTO){
+        profileRequestDTO.setCreatedAt(new Date());
+        return profileService.saveProfile(profileRequestDTO);
     }
 
     @GetMapping(path = "/all")
-    public List<Profile> getProfiles(){
+    public List<ProfileResponseDTO> getProfiles(){
         return profileService.getAllProfiles();
     }
 }

@@ -28,7 +28,7 @@ public abstract class User {
     @Size(min = 6, message = "Password must have 6 characters at least !")
     private String password;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     private Profile profile;
 
     @ManyToMany(fetch = FetchType.EAGER)

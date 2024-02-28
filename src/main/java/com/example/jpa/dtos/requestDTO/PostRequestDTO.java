@@ -1,18 +1,17 @@
 package com.example.jpa.dtos.requestDTO;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientRequestDTO {
+public class PostRequestDTO {
 
-    private String username;
-    private String password;
-    private Long profileId;
-    private String email;
-
+    private String content;
+    private Date timestamp;
+    private Long clientId;
 }

@@ -1,6 +1,7 @@
 package com.example.jpa.controllers;
 
-import com.example.jpa.entities.Post;
+import com.example.jpa.dtos.requestDTO.PostRequestDTO;
+import com.example.jpa.dtos.responseDTO.PostResponseDTO;
 import com.example.jpa.services.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +17,12 @@ public class PostController {
 
 
     @PostMapping(path = "/add")
-    public Post addPost(@RequestBody Post post){
-        return postService.savePost(post);
+    public PostResponseDTO addPost(@RequestBody PostRequestDTO postRequestDTO){
+        return postService.savePost(postRequestDTO);
     }
 
     @GetMapping(path = "/all")
-    public List<Post> getAllPosts(){
+    public List<PostResponseDTO> getAllPosts(){
         return postService.getPosts();
     }
 

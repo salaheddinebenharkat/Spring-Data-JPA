@@ -1,5 +1,7 @@
 package com.example.jpa.controllers;
 
+import com.example.jpa.dtos.requestDTO.ClientRequestDTO;
+import com.example.jpa.dtos.responseDTO.ClientResponseDTO;
 import com.example.jpa.entities.Client;
 import com.example.jpa.services.ClientService;
 import lombok.RequiredArgsConstructor;
@@ -15,12 +17,12 @@ public class ClientController {
     private final ClientService clientService;
 
     @PostMapping(path = "/add")
-    public Client addClient(@RequestBody Client client){
-        return clientService.saveClient(client);
+    public ClientResponseDTO addClient(@RequestBody ClientRequestDTO clientRequestDTO){
+        return clientService.saveClient(clientRequestDTO);
     }
 
     @GetMapping(path = "/all")
-    public List<Client> getClients(){
+    public List<ClientResponseDTO> getClients(){
         return clientService.getAllClients();
     }
 
