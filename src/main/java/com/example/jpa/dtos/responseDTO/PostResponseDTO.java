@@ -14,6 +14,5 @@ public class PostResponseDTO {
 
     private Long id;
     private String content;
-    private Date timestamp;
     private Client client;
 }

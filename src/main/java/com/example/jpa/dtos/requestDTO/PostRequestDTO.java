@@ -12,6 +12,5 @@ import java.util.Date;
 public class PostRequestDTO {
 
     private String content;
-    private Date timestamp;
     private Long clientId;
 }

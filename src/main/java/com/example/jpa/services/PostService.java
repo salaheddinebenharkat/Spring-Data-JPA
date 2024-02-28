@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +29,7 @@ public class PostService {
         Post post = modelMapper.map(postRequestDTO, Post.class);
         Client client = clientRepo.findById(postRequestDTO.getClientId()).get();
         post.setClient(client);
+        post.setTimestamp(new Date());
         Post savedPost = postRepo.save(post);
         log.info("Client "+client.getUsername()+" has added the comment "+post.getContent());
         return modelMapper.map(savedPost, PostResponseDTO.class);
@@ -37,5 +40,9 @@ public class PostService {
         return postRepo.findAll()
                 .stream().map(item -> modelMapper.map(item, PostResponseDTO.class))
                 .collect(Collectors.toList());
+    }
+
+    public List<Post> getPostsByClientId(Long clientId){
+        return postRepo.findPostsByClient_Id(clientId);
     }
 }

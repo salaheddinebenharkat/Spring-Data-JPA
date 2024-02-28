@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-233.14475.28">
+  <component name="dataSourceStorageLocal" created-in="IU-231.9161.38">
     <data-source name="DB_JPA@localhost" uuid="c4a03498-f4d1-48b9-8b56-e4cda9a6f452">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
       <secret-storage>forget</secret-storage>
-      <user-name>root</user-name>
       <schema-mapping />
     </data-source>
   </component>

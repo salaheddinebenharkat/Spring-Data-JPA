@@ -16,7 +16,6 @@ public class ClientResponseDTO {
 
     private Long id;
     private String username;
-    private String password;
     private Profile profile;
     private String email;
     private List<Role> roles;

@@ -23,5 +23,6 @@ public class Post {
     private Date timestamp;
 
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 }

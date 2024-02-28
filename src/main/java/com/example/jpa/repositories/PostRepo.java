@@ -1,5 +1,6 @@
 package com.example.jpa.repositories;
 
+import com.example.jpa.dtos.responseDTO.PostResponseDTO;
 import com.example.jpa.entities.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -7,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.UUID;
 
 public interface PostRepo extends JpaRepository<Post, Long> {
 
@@ -45,5 +45,8 @@ public interface PostRepo extends JpaRepository<Post, Long> {
     public List<Post> savedPostsBetweenInternal(Timestamp startDate, Timestamp endDate);
 
     public List<Post> findByTimestampBetween(Timestamp startDate, Timestamp endDate);
+
+
+    public List<Post> findPostsByClient_Id(Long clientId);
 
 }
